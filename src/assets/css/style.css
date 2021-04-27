@@ -1866,3 +1866,10 @@ button.viewMore {
   .single-property ul {
     margin-left: 20px;
   }
+
+
+  .buy-searchForm input::-webkit-outer-spin-button,
+.buy-searchForm input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
