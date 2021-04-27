@@ -1,44 +1,31 @@
 <template>
   <div class="container">
-    <loading
-      :active.sync="isLoading"
-      :can-cancel="false"
-      loader="dots"
-      color="rgb(42, 46, 67)"
-      :is-full-page="true"
-    ></loading>
+    <loading :active.sync="isLoading"
+             :can-cancel="false"
+             loader="dots"
+             color="rgb(42, 46, 67)"
+             :is-full-page="true"></loading>
 
     <div class="row">
       <div class="col-md-12">
         <div class="slider-search">
           <ul>
-            <li
-              :class="activeTab == cat.id ? 'active' : ''"
-              @click="searchToggle(cat.id)"
-              v-for="(cat, ind) in propertyCategory"
-            >
+            <li :class="activeTab==cat.id? 'active':''" @click="searchToggle(cat.id)" v-for="(cat,ind) in propertyCategory">
               {{ cat.name }}
             </li>
           </ul>
           <ValidationObserver v-slot="{ handleSubmit }">
-            <form
-              class="search-form buy-searchForm"
-              action=""
-              @submit.prevent="handleSubmit(onSubmit)"
-            >
+
+            <form class="search-form buy-searchForm" action="" @submit.prevent="handleSubmit(onSubmit)">
               <div class="row">
                 <div class="col-md-6 col-5 m-auto">
-                  <label
-                    >Location
-                    <g-image src="~/assets/images/dropdown.svg" />
+                  <label>Location
+                    <g-image src="~/assets/images/dropdown.svg"/>
                   </label>
                 </div>
                 <div class="col-md-6 col-7">
-                  <select
-                    v-model="searchForm.location"
-                    style="-webkit-appearance: menulist"
-                  >
-                    <option value="0">-Select-</option>
+                  <select v-model="searchForm.location" >
+                    <option value="0">-elect-</option>
                     <option value="dubai">Dubai</option>
                     <option value="India">India</option>
                     <option value="USA">USA</option>
@@ -47,37 +34,28 @@
               </div>
               <div class="row">
                 <div class="col-md-6 col-5 m-auto">
-                  <label
-                    >Completion
-                    <g-image src="~/assets/images/dropdown.svg" />
+                  <label>Completion
+                    <g-image src="~/assets/images/dropdown.svg"/>
                   </label>
                 </div>
                 <div class="col-md-6 col-7">
                   <select v-model="searchForm.completion">
                     <option value="0">-Select-</option>
-                    <option
-                      v-for="(cmp, ind) in projectCompletion"
-                      :value="cmp.id"
-                    >
-                      {{ cmp.name }}
-                    </option>
+                    <option v-for="(cmp,ind) in projectCompletion" :value="cmp.id">{{ cmp.name }}</option>
                   </select>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-md-6 col-5 m-auto">
-                  <label
-                    >Property
-                    <g-image src="~/assets/images/dropdown.svg" />
+                  <label>Property
+                    <g-image src="~/assets/images/dropdown.svg"/>
                   </label>
                 </div>
                 <div class="col-md-6 col-7">
                   <select v-model="searchForm.property">
                     <option value="0">-Select-</option>
-                    <option v-for="(cmp, ind) in propertyType" :value="cmp.id">
-                      {{ cmp.name }}
-                    </option>
+                    <option v-for="(cmp,ind) in propertyType" :value="cmp.id">{{ cmp.name }}</option>
                   </select>
                 </div>
               </div>
@@ -99,10 +77,11 @@
               </div> -->
 
               <div class="d-flex flex-column searchBtn">
-                <input type="submit" value="Search" />
+                <input type="submit" value="Search"/>
               </div>
             </form>
           </ValidationObserver>
+
         </div>
       </div>
     </div>
@@ -110,30 +89,30 @@
 </template>
 
 <script>
-import { extend, ValidationObserver, ValidationProvider } from "vee-validate";
-import { numeric, required } from "vee-validate/dist/rules";
-import axios from "axios";
-import { getStrapiMedia } from "~/utils/medias";
-import Loading from "vue-loading-overlay";
+import {extend, ValidationObserver, ValidationProvider} from 'vee-validate';
+import {numeric, required} from 'vee-validate/dist/rules';
+import axios from 'axios'
+import {getStrapiMedia} from "~/utils/medias";
+import Loading from 'vue-loading-overlay';
 
-extend("required", {
+extend('required', {
   ...required,
-  message: "This field is required",
+  message: 'This field is required'
 });
 
-extend("numeric", {
+extend('numeric', {
   ...numeric,
-  message: "Enter a valid phone number",
+  message: 'Enter a valid phone number'
+
 });
+
 
 export default {
   name: "PropertySearch",
-  props: ["page"],
+  props:['page'],
   mounted() {
-    this.pagination.page = this.page;
-    this.activeTab = this.$route.query.category
-      ? this.$route.query.category
-      : 1;
+    this.pagination.page=this.page
+    this.activeTab = this.$route.query.category ? this.$route.query.category : 1;
     this.searchForm = this.getParams();
     this.getProperty();
     this.getCompletion();
@@ -141,11 +120,12 @@ export default {
     if (Object.keys(this.$route.query).length) {
       this.onSubmit();
     }
+
   },
-  components: { ValidationObserver, ValidationProvider, Loading },
+  components: {ValidationObserver, ValidationProvider, Loading},
   data() {
     return {
-      searchForm: { location: 0, completion: 0, property: 0 },
+      searchForm: {location: 0, completion: 0, property: 0},
       activeTab: 1,
       projectCompletion: [],
       propertyType: [],
@@ -154,129 +134,138 @@ export default {
       isLoading: false,
       currentPage: 1,
       pagination: {
-        page: "1",
-        per_page: "5",
-        next_page: "2",
+        "page": "1",
+        "per_page": "5",
+        "next_page": "2",
       },
-    };
+
+    }
   },
-  watch: {
-    page(newVal, oldVal) {
-      this.currentPage = newVal;
+  watch:{
+    page(newVal,oldVal){
+      this.currentPage=newVal;
       this.onSubmit();
-    },
+    }
   },
 
   methods: {
     getParams() {
       var fullUrl = this.$route.fullPath;
-      var paramsArray = fullUrl.split("?");
-      if (typeof paramsArray[1] === "string") {
+      var paramsArray = fullUrl.split('?');
+      if (typeof paramsArray[1] === 'string') {
         const urlParams = new URLSearchParams(paramsArray[1]);
         return Object.fromEntries(urlParams);
-      } else return { location: 0 };
+      } else return {location: 0};
     },
     getStrapiMedia,
     searchToggle(val) {
+
       this.activeTab = val;
     },
     async onSubmit() {
       try {
         this.searchForm.category = this.activeTab;
-        if (
-          this.$router.history.current.path === "/search" ||
-          this.$router.history.current.path === "/search/"
-        ) {
+        if (this.$router.history.current.path === "/search" || this.$router.history.current.path === "/search/") {
           this.isLoading = true;
           var formData = JSON.parse(JSON.stringify(this.searchForm));
-          if (formData.location == 0) delete formData.location;
-          if (formData.completion == 0) delete formData.completion;
-          if (formData.property == 0) delete formData.property;
-          if (formData.category == 0) delete formData.category;
+          if (formData.location == 0)
+            delete formData.location;
+          if (formData.completion == 0)
+            delete formData.completion;
+          if (formData.property == 0)
+            delete formData.property;
+          if (formData.category == 0)
+            delete formData.category;
 
           // page=4&per_page=5
-          if (this.pagination) formData.page = this.currentPage;
+          if (this.pagination)
+            formData.page = this.currentPage;
 
-          console.log(formData);
+          console.log(formData)
           const results = await axios.get(
-            getStrapiMedia("/properties/search"),
-            { params: formData }
+              getStrapiMedia('/properties/search'),
+              {params: formData}
           );
-          var data = typeof results.data == "object" ? results.data : [];
-          this.pagination =
-            typeof data.pagination == "object" ? data.pagination : {};
+          var data = (typeof results.data == 'object' ) ? results.data : [];
+          this.pagination = typeof data.pagination == 'object' ? data.pagination : {};
 
-          this.$emit(
-            "onSearchResult",
-            typeof results.data == "object" &&
-              typeof results.data.data == "object"
-              ? data
-              : []
-          );
+          this.$emit('onSearchResult', (typeof results.data == 'object' && typeof results.data.data == 'object') ? data : []);
           this.isLoading = false;
         } else {
           this.$router.push({
-            path: "/search",
-            query: this.searchForm,
-          });
+            path: '/search',
+            query: this.searchForm
+          })
         }
+
       } catch (error) {
         this.isLoading = false;
 
         console.log(error);
         return [];
       }
+
     },
     async getCompletion() {
       try {
-        const results = await axios.get(getStrapiMedia("/project-statuses"));
+        const results = await axios.get(
+            getStrapiMedia('/project-statuses')
+        );
 
         // console.log(results.data);
         this.projectCompletion = results.data;
-        if (typeof this.projectCompletion === "object") {
-          this.searchForm.completion = this.$route.query.completion
-            ? this.$route.query.completion
-            : 0;
+        if (typeof this.projectCompletion === 'object') {
+          this.searchForm.completion = this.$route.query.completion ? this.$route.query.completion : 0
         }
       } catch (error) {
+
         console.log(error);
         return [];
       }
+
     },
 
     async getProperty() {
       try {
-        const results = await axios.get(getStrapiMedia("/property-types"));
+        const results = await axios.get(
+            getStrapiMedia('/property-types')
+        );
 
         // console.log(results.data);
         this.propertyType = results.data;
-        if (typeof this.propertyType === "object")
-          this.searchForm.property = this.$route.query.property
-            ? this.$route.query.property
-            : 0;
+        if (typeof this.propertyType === 'object')
+          this.searchForm.property = this.$route.query.property ? this.$route.query.property : 0
+
       } catch (error) {
+
         console.log(error);
         return [];
       }
+
     },
 
     async getPropertyCategory() {
       try {
-        const results = await axios.get(getStrapiMedia("/property-statuses"));
+        const results = await axios.get(
+            getStrapiMedia('/property-statuses')
+        );
         // console.log(results.data);
         this.propertyCategory = results.data;
-        if (typeof this.propertyType === "object")
-          this.searchForm.category = this.$route.query.category
-            ? this.$route.query.category
-            : 0;
+        if (typeof this.propertyType === 'object')
+          this.searchForm.category = this.$route.query.category ? this.$route.query.category : 0
+
       } catch (error) {
+
         console.log(error);
         return [];
       }
+
     },
-  },
-};
+
+  }
+}
 </script>
 
 <style>
+
 </style>
