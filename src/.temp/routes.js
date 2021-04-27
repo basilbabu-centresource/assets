@@ -1,23 +1,23 @@
-const c1 = () => import(/* webpackChunkName: "page--src--templates--property-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/templates/Property.vue")
-const c2 = () => import(/* webpackChunkName: "page--src--templates--article-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/templates/Article.vue")
-const c3 = () => import(/* webpackChunkName: "page--src--templates--category-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/templates/Category.vue")
-const c4 = () => import(/* webpackChunkName: "page--src--templates--area-guide-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/templates/areaGuide.vue")
-const c5 = () => import(/* webpackChunkName: "page--src--pages--rent-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/Rent.vue")
-const c6 = () => import(/* webpackChunkName: "page--src--pages--property-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/Property.vue")
-const c7 = () => import(/* webpackChunkName: "page--src--pages--search-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/Search.vue")
-const c8 = () => import(/* webpackChunkName: "page--src--pages--services-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/Services.vue")
-const c9 = () => import(/* webpackChunkName: "page--src--pages--privacy-policy-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/Privacy Policy.vue")
-const c10 = () => import(/* webpackChunkName: "page--src--pages--list-your-property-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/List Your Property.vue")
-const c11 = () => import(/* webpackChunkName: "page--src--pages--home-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/Home.vue")
-const c12 = () => import(/* webpackChunkName: "page--src--pages--careers-apply-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/Careers Apply.vue")
-const c13 = () => import(/* webpackChunkName: "page--src--pages--contact-us-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/ContactUs.vue")
-const c14 = () => import(/* webpackChunkName: "page--src--pages--careers-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/Careers.vue")
-const c15 = () => import(/* webpackChunkName: "page--src--pages--about-us-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/About Us.vue")
-const c16 = () => import(/* webpackChunkName: "page--src--pages--area-guide-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/AreaGuide.vue")
-const c17 = () => import(/* webpackChunkName: "page--src--pages--buy-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/Buy.vue")
-const c18 = () => import(/* webpackChunkName: "page--src--pages--article-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/Article.vue")
-const c19 = () => import(/* webpackChunkName: "page--node-modules--gridsome--app--pages--404-vue" */ "/home/blesy/Desktop/asset-homez-frontend/node_modules/gridsome/app/pages/404.vue")
-const c20 = () => import(/* webpackChunkName: "page--src--pages--index-vue" */ "/home/blesy/Desktop/asset-homez-frontend/src/pages/Index.vue")
+const c1 = () => import(/* webpackChunkName: "page--src--templates--property-vue" */ "/home/blesy/Desktop/assets/src/templates/Property.vue")
+const c2 = () => import(/* webpackChunkName: "page--src--templates--article-vue" */ "/home/blesy/Desktop/assets/src/templates/Article.vue")
+const c3 = () => import(/* webpackChunkName: "page--src--templates--category-vue" */ "/home/blesy/Desktop/assets/src/templates/Category.vue")
+const c4 = () => import(/* webpackChunkName: "page--src--templates--area-guide-vue" */ "/home/blesy/Desktop/assets/src/templates/areaGuide.vue")
+const c5 = () => import(/* webpackChunkName: "page--src--pages--rent-vue" */ "/home/blesy/Desktop/assets/src/pages/Rent.vue")
+const c6 = () => import(/* webpackChunkName: "page--src--pages--property-vue" */ "/home/blesy/Desktop/assets/src/pages/Property.vue")
+const c7 = () => import(/* webpackChunkName: "page--src--pages--search-vue" */ "/home/blesy/Desktop/assets/src/pages/Search.vue")
+const c8 = () => import(/* webpackChunkName: "page--src--pages--services-vue" */ "/home/blesy/Desktop/assets/src/pages/Services.vue")
+const c9 = () => import(/* webpackChunkName: "page--src--pages--privacy-policy-vue" */ "/home/blesy/Desktop/assets/src/pages/Privacy Policy.vue")
+const c10 = () => import(/* webpackChunkName: "page--src--pages--list-your-property-vue" */ "/home/blesy/Desktop/assets/src/pages/List Your Property.vue")
+const c11 = () => import(/* webpackChunkName: "page--src--pages--home-vue" */ "/home/blesy/Desktop/assets/src/pages/Home.vue")
+const c12 = () => import(/* webpackChunkName: "page--src--pages--careers-apply-vue" */ "/home/blesy/Desktop/assets/src/pages/Careers Apply.vue")
+const c13 = () => import(/* webpackChunkName: "page--src--pages--contact-us-vue" */ "/home/blesy/Desktop/assets/src/pages/ContactUs.vue")
+const c14 = () => import(/* webpackChunkName: "page--src--pages--careers-vue" */ "/home/blesy/Desktop/assets/src/pages/Careers.vue")
+const c15 = () => import(/* webpackChunkName: "page--src--pages--about-us-vue" */ "/home/blesy/Desktop/assets/src/pages/About Us.vue")
+const c16 = () => import(/* webpackChunkName: "page--src--pages--area-guide-vue" */ "/home/blesy/Desktop/assets/src/pages/AreaGuide.vue")
+const c17 = () => import(/* webpackChunkName: "page--src--pages--buy-vue" */ "/home/blesy/Desktop/assets/src/pages/Buy.vue")
+const c18 = () => import(/* webpackChunkName: "page--src--pages--article-vue" */ "/home/blesy/Desktop/assets/src/pages/Article.vue")
+const c19 = () => import(/* webpackChunkName: "page--node-modules--gridsome--app--pages--404-vue" */ "/home/blesy/Desktop/assets/node_modules/gridsome/app/pages/404.vue")
+const c20 = () => import(/* webpackChunkName: "page--src--pages--index-vue" */ "/home/blesy/Desktop/assets/src/pages/Index.vue")
 
 export default [
   {
@@ -97,6 +97,10 @@ export default [
     component: c1
   },
   {
+    path: "/area-guide/palm-jumeira/",
+    component: c4
+  },
+  {
     path: "/property/bella-vista/",
     component: c1
   },
@@ -125,11 +129,7 @@ export default [
     component: c4
   },
   {
-    path: "/area-guide/area-guide-1/",
-    component: c4
-  },
-  {
-    path: "/area-guide/area-guide-3/",
+    path: "/area-guide/dubai-marina/",
     component: c4
   },
   {

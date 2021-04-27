@@ -16,7 +16,7 @@
           </ul>
           <ValidationObserver v-slot="{ handleSubmit }">
 
-            <form class="search-form buy-searchForm" action="" @submit.prevent="handleSubmit(onSubmit)">
+            <form class="search-form buy-searchForm mob" action="" @submit.prevent="handleSubmit(onSubmit)">
               <div class="row">
                 <div class="col-md-6 col-5 m-auto">
                   <label>Location
@@ -24,8 +24,8 @@
                   </label>
                 </div>
                 <div class="col-md-6 col-7">
-                  <select v-model="searchForm.location" style="-webkit-appearance: menulist;">
-                    <option value="0">-elect-</option>
+                  <select v-model="searchForm.location">
+                    <option value="0">-Select- </option>
                     <option value="dubai">Dubai</option>
                     <option value="India">India</option>
                     <option value="USA">USA</option>

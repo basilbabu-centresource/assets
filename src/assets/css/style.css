@@ -1868,9 +1868,10 @@ button.viewMore {
   }
 
 
-  /* select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 0;}
-  */
+  .mob select {
+    -webkit-appearance: none!important;
+    -moz-appearance: none!important;
+    background: url(../../assets/images/dropdown.svg) no-repeat right rgba(255, 255, 255, 0)!important;
+  }
+  
+ 
