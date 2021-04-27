@@ -24,7 +24,7 @@
                   </label>
                 </div>
                 <div class="col-md-6 col-7">
-                  <select v-model="searchForm.location">
+                  <select v-model="searchForm.location" style="width:300px;-webkit-appearance: menulist;">
                     <option value="0">-elect-</option>
                     <option value="dubai">Dubai</option>
                     <option value="India">India</option>
