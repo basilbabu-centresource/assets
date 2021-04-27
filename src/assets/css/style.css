@@ -1868,8 +1868,13 @@ button.viewMore {
   }
 
 
-  .buy-searchForm input::-webkit-outer-spin-button,
-.buy-searchForm input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+  select {
+    -webkit-appearance: none;
+    /*webkit browsers */
+    -moz-appearance: none;
+    /*Firefox */
+    appearance: none;
+    /* modern browsers */
+    border-radius: 0;
+  
+  }
